@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lelehbass - Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#ffffff;color:#333;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* Paleta */
+:root{
+    --rosa-escuro: #cc5c87;
+    --rosinha: #f8d7e2;
+    --cinza-claro: #f6f6f6;
+    --texto: #333333;
+}
+
+/* CABEÇALHO */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px 50px;
+    background:#ffffff;
+    flex-wrap:wrap;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.header-left{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.artist-name{
+    font-family:'Pacifico', cursive;
+    font-size:70px;
+    color:var(--rosa-escuro);
+}
+
+.tagline{
+    font-family:'Montserrat', sans-serif;
+    font-size:18px;
+    font-weight:500;
+    color:#555;
+    margin-top:5px;
+}
+
+.photo-container{
+    width:160px;
+    height:160px;
+    overflow:hidden;
+    border-radius:15px;
+    border:3px solid var(--rosa-escuro);
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* SEÇÕES */
+main{max-width:1000px;margin:40px auto;padding:0 20px;}
+section{margin:40px 0;padding:30px;border-radius:12px;}
+section.alt{background:var(--cinza-claro);}
+
+h2{font-size:28px;margin-bottom:20px;color:var(--rosa-escuro);border-bottom:2px solid var(--rosinha);display:inline-block;padding-bottom:5px;}
+p{color:var(--texto);font-size:16px;}
+
+/* CARDS */
+.cards{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:12px;}
+.card{background:#fff;border-radius:12px;padding:16px;width:220px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.25s,box-shadow 0.25s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.08);}
+.card h3{font-size:18px;color:var(--rosa-escuro);margin-bottom:8px;}
+.card img{width:100%;border-radius:8px;margin-top:8px;display:block;}
+
+/* REDES */
+.socials{display:flex;justify-content:center;gap:22px;font-size:18px;margin-top:12px;}
+.socials a{color:var(--rosa-escuro);font-weight:600;transition:transform 0.15s;}
+.socials a:hover{transform:scale(1.05);text-decoration:underline;}
+
+/* PROJETOS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px;}
+.project-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.25s,box-shadow 0.25s;}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.08);}
+.project-card img{width:100%;display:block;}
+.project-card .info{padding:12px;text-align:center;}
+.project-card .info h4{font-size:16px;color:var(--rosa-escuro);margin-bottom:6px;}
+.project-card .info p{font-size:14px;color:#555;}
+
+/* PARTNERS */
+.partners{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:12px;}
+.partner{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:0 6px 18px rgba(0,0,0,0.04);font-weight:600;color:var(--texto);}
+
+/* RODAPÉ */
+footer{background:transparent;color:var(--texto);text-align:center;padding:30px 20px;margin-top:40px;border-top:1px solid #eee;font-size:15px;}
+footer a{color:var(--rosa-escuro);font-weight:600;}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .artist-name{font-size:48px;}
+    header{padding:30px 20px;}
+    .photo-container{width:120px;height:120px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="artist-name">Lelehbass</div>
+        <div class="tagline">Criadora de Conteúdo Musical | Media Kit</div>
+    </div>
+    <div class="photo-container">
+        <img src="foto_lele.jpg" alt="Foto da Lelehbass">
+    </div>
+</header>
+
+<main>
+
+<section class="about">
+    <h2>Sobre mim</h2>
+    <p>Olá! Sou Letícia Araújo (Lelehbass), musicista de Fortaleza com 4 anos de experiência no baixo. Comecei a compartilhar meu conteúdo musical de forma consistente recentemente e, desde então, meu perfil tem apresentado um crescimento considerável. Crio vídeos criativos, tutoriais e performances que conectam com um público engajado e apaixonado por música. Estou aberta a novas parcerias e oportunidades para crescer junto com marcas que se identifiquem com meu estilo e conteúdo.</p>
+</section>
+
+<section class="highlights alt">
+    <h2>Destaques</h2>
+
+    <!-- Instagram Metrics (6 prints) -->
+    <h3>Instagram</h3>
+    <div class="cards">
+        <div class="card"><img src="2visualizacoes_insta.jpeg" alt="Print Instagram 1"></div>
+        <div class="card"><img src="1interacoes_insta.jpeg" alt="Print Instagram 2"></div>
+        <div class="card"><img src="3novos_seguidores_insta.jpeg" alt="Print Instagram 3"></div>
+        <div class="card"><img src="faixa_etaria_insta.PNG" alt="Print Instagram 4"></div>
+        <div class="card"><img src="genero_insta.PNG" alt="Print Instagram 5"></div>
+        <div class="card"><img src="localizacao_insta.PNG" alt="Print Instagram 6"></div>
+    </div>
+
+    <!-- TikTok Metrics (1 print) -->
+    <h3 style="margin-top:30px;">TikTok</h3>
+    <div class="cards">
+        <div class="card"><img src="metricas_tiktok.jpeg" alt="Print TikTok"></div>
+    </div>
+
+</section>
+
+<section class="socials-section">
+    <h2>Redes Sociais</h2>
+    <div class="socials">
+        <a href="https://www.instagram.com/lelehbass/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@lelehbass" target="_blank">TikTok</a>
+         <a href="https://www.twitch.tv/lelehbass" target="_blank">Twitch</a>
+        <a href="https://www.youtube.com/@lelehbass" target="_blank">YouTube</a>
+    </div>
+</section>
+
+<section class="projects-section alt">
+    <h2>Vídeos / Trabalhos</h2>
+    <div class="projects">
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DPM0ww4Es5K" target="_blank">
+                <img src="capa_videoDICAS.jpeg" alt="Vídeo 1">
+            </a>
+            <div class="info"><h4></h4><p>Vídeo onde mostro e dou dicas de equipamentos pra quem quer começar a tocar ou fazer gravações em casa.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DPha3W2Dc2z" target="_blank">
+                <img src="capa_DICASMUSICAS.jpeg" alt="Vídeo 2">
+            </a>
+            <div class="info"><h4></h4><p>Vídeo onde dou dicas de músicas para iniciantes aprenderem a tocar.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DPMOjKPjdID" target="_blank">
+                <img src="capa-desejo.jpeg" alt="Vídeo 3">
+            </a>
+            <div class="info"><h4></h4><p>Meu vídeo recente no instagram com mais visualizações / contexto</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section">
+    <h2>Parcerias / Colaborações</h2>
+    <div class="partners">
+        <div class="partner">
+            Aberta a colaborações com marcas de música, instrumentos e lifestyle
+        </div>
+       
+        <div class="partner">
+            Produção de conteúdo criativo, divertido e focado em música
+        </div>
+        <div class="partner">
+            Perfil ideal para divulgação de produtos e experiências musicais
+        </div>
+    </div>
+<section class="contact">
+    <h2>Contato</h2>
+    <p>Para parcerias e colaborações, entre em contato: 
+        <a href="mailto:leharaujo.mgmt@gmail.com">leharaujo.mgmt@gmail.com</a>
+    </p>
+    <p style="margin-top:15px; font-weight:600; color:var(--rosa-escuro);">
+        Gostaria de colaborar? <a href="mailto:leharaujo.mgmt@gmail.com">Envie um email agora!</a>
+    </p>
+</section>
+
+<footer>
+    &copy; 2025 Lelehbass | Todos os direitos reservados
+</footer>
+
+</body>
+</html>
