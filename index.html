@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lelehbass - Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+<!-- Font Awesome para ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg, #fff, #fef0f5);color:#333;line-height:1.6;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
+
+/* Paleta */
+:root{
+    --rosa-escuro: #cc5c87;
+    --rosinha: #f8d7e2;
+    --cinza-claro: #f6f6f6;
+    --texto: #333333;
+}
+
+/* CABEÇALHO */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:20px 50px;
+    background:#ffffff;
+    flex-wrap:wrap;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-left{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.header-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+}
+
+.artist-name{
+    font-family:'Pacifico', cursive;
+    font-size:70px;
+}
+
+.tagline{
+    font-family:'Montserrat', sans-serif;
+    font-size:18px;
+    font-weight:500;
+    color:#555;
+    margin-top:5px;
+}
+
+/* Contato e redes no header */
+.header-contact{
+    display:flex;
+    gap:15px;
+    margin-top:8px;
+    font-size:18px;
+}
+
+.header-contact a{
+    color:var(--rosa-escuro);
+    transition:transform 0.2s;
+}
+.header-contact a:hover{
+    transform:scale(1.1);
+}
+
+/* Photo container */
+.photo-container{
+    width:120px;
+    height:120px;
+    overflow:hidden;
+    border-radius:15px;
+    border:3px solid var(--rosa-escuro);
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin-top:10px;
+}
+.photo-container:hover{transform:scale(1.05);}
+.photo-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* SEÇÕES */
+main{max-width:1000px;margin:40px auto;padding:0 20px;}
+section{margin:40px 0;padding:30px;border-radius:12px;opacity:0;transform:translateY(20px);transition:all 0.8s ease-in-out;}
+section.visible{opacity:1;transform:translateY(0);}
+section.alt{background:var(--cinza-claro);}
+
+h2{font-size:28px;margin-bottom:20px;color:var(--rosa-escuro);border-bottom:2px solid var(--rosinha);display:inline-block;padding-bottom:5px;}
+p{color:var(--texto);font-size:16px;}
+
+/* CARDS */
+.cards{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:12px;}
+.card{background:#fff;border-radius:12px;padding:16px;width:220px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.25s,box-shadow 0.25s;}
+.card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.08);}
+.card img{width:100%;border-radius:8px;margin-top:8px;display:block;transition:transform 0.3s;}
+.card img:hover{transform:scale(1.05);}
+
+/* REDES */
+.socials{display:flex;justify-content:center;gap:22px;font-size:18px;margin-top:12px;}
+.socials a{
+    color:var(--rosa-escuro);
+    font-weight:600;
+    transition:transform 0.2s;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.socials a:hover{transform:scale(1.05);text-decoration:underline;}
+
+/* PROJETOS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px;}
+.project-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.25s,box-shadow 0.25s;}
+.project-card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.08);}
+.project-card img{width:100%;display:block;transition:transform 0.3s;}
+.project-card img:hover{transform:scale(1.05);}
+.project-card .info{padding:12px;text-align:center;}
+.project-card .info h4{font-size:16px;color:var(--rosa-escuro);margin-bottom:6px;}
+.project-card .info p{font-size:14px;color:#555;}
+
+/* PARTNERS */
+.partners{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:12px;}
+.partner{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:0 6px 18px rgba(0,0,0,0.04);font-weight:600;color:var(--texto);transition:transform 0.25s;}
+.partner:hover{transform:scale(1.03);}
+
+/* RODAPÉ */
+footer{background:transparent;color:var(--texto);text-align:center;padding:30px 20px;margin-top:40px;border-top:1px solid #eee;font-size:15px;}
+footer a{color:var(--rosa-escuro);font-weight:600;}
+
+/* BOTÃO VOLTAR AO TOPO */
+#backToTop{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:var(--rosa-escuro);
+    color:#fff;
+    border:none;
+    padding:10px 14px;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:100;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+#backToTop:hover{transform:scale(1.1);}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .artist-name{font-size:48px;}
+    header{padding:20px 20px;}
+    .photo-container{width:100px;height:100px;}
+    .header-right{align-items:flex-start; margin-top:10px;}
+    .cards{gap:12px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="artist-name">Lelehbass</div>
+        <div class="tagline">Criadora de Conteúdo Musical | Media Kit</div>
+    </div>
+    <div class="header-right">
+        <div class="header-contact">
+            <a href="mailto:leharaujo.mgmt@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.instagram.com/lelehbass/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@lelehbass" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.twitch.tv/lelehbass" target="_blank" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+            <a href="https://www.youtube.com/@lelehbass" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="photo-container">
+            <img src="foto_lele.jpg" alt="Foto da Lelehbass">
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section class="about">
+    <h2>Sobre mim</h2>
+    <p>Olá! Sou Letícia Araújo (Lelehbass), musicista de Fortaleza com 4 anos de experiência no baixo. Comecei a compartilhar meu conteúdo musical de forma consistente recentemente e, desde então, meu perfil tem apresentado um crescimento considerável. Crio vídeos criativos, tutoriais e performances que conectam com um público engajado e apaixonado por música. Estou aberta a novas parcerias e oportunidades para crescer junto com marcas que se identifiquem com meu estilo e conteúdo.</p>
+</section>
+
+<section class="highlights alt">
+    <h2>Destaques</h2>
+
+    <h3>Instagram</h3>
+    <div class="cards">
+        <div class="card"><img src="2visualizacoes_insta.jpeg" alt="Print Instagram 1"></div>
+        <div class="card"><img src="1interacoes_insta.jpeg" alt="Print Instagram 2"></div>
+        <div class="card"><img src="faixa_etaria_insta.jpeg" alt="Print Instagram 3"></div>
+        <div class="card"><img src="genero_insta.jpeg" alt="Print Instagram 4"></div>
+    </div>
+
+    <h3 style="margin-top:30px;">TikTok</h3>
+    <div class="cards">
+        <div class="card"><img src="metricas_tiktok.jpeg" alt="Print TikTok"></div>
+    </div>
+</section>
+
+<section class="socials-section">
+    <h2>Redes Sociais</h2>
+    <div class="socials">
+        <a href="https://www.instagram.com/lelehbass/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@lelehbass" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="https://www.twitch.tv/lelehbass" target="_blank"><i class="fa-brands fa-twitch"></i> Twitch</a>
+        <a href="https://www.youtube.com/@lelehbass" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="mailto:leharaujo.mgmt@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    </div>
+</section>
+
+<section class="projects-section alt">
+    <h2>Vídeos / Trabalhos</h2>
+    <div class="projects">
+        <div class="project-card">
+            <a href="https://www.instagram.com/p/DQU78xnkgGh/" target="_blank">
+                <img src="unboxingTEYUN.jpeg" alt="Vídeo 1">
+            </a>
+            <div class="info"><p>Vídeo unboxing da interface de áudio Teyun Q24.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/p/DQKmfDKkqnS/" target="_blank">
+                <img src="unboxingBAG.jpg" alt="Vídeo 2">
+            </a>
+            <div class="info"><p>Vídeo unboxing BAG AVS CH200.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/p/DPw18bgElvD/" target="_blank">
+                <img src="mostrandobaixos.jpg" alt="Vídeo 3">
+            </a>
+            <div class="info"><p>Vídeo agradecimento 10k de seguidores & mostrando meus baixos.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DQIBqASkuZ0/" target="_blank">
+                <img src="5musicas.jpg" alt="Vídeo 4">
+            </a>
+            <div class="info"><p>Video com dicas de músicas para iniciantes.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DQNMZSSiUn8/" target="_blank">
+                <img src="cordasfalsas.jpg" alt="Vídeo 5">
+            </a>
+            <div class="info"><p>Falando sobre os malefícios e riscos de se usar encordoamentos falsificados.</p></div>
+        </div>
+        <div class="project-card">
+            <a href="https://www.instagram.com/reel/DPM0ww4Es5K/" target="_blank">
+                <img src="equipamentos.jpg" alt="Vídeo 6">
+            </a>
+            <div class="info"><p>Equipamentos custo beneficio pra quem quer começar a tocar e gravar em casa.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section">
+    <h2>Parcerias / Colaborações</h2>
+    <div class="partners">
+        <div class="partner">Aberta a colaborações com marcas de música, instrumentos e lifestyle</div>
+        <div class="partner">Produção de conteúdo criativo, divertido e focado em música</div>
+        <div class="partner">Perfil ideal para divulgação de produtos e experiências musicais</div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contato</h2>
+    <p>Para parcerias e colaborações, entre em contato: 
+        <a href="mailto:leharaujo.mgmt@gmail.com">leharaujo.mgmt@gmail.com</a>
+    </p>
+    <p style="margin-top: 20px; font-weight: 600; color: var(--rosa-escuro); font-size: 1.1rem; text-align: center;">
+  💌 <strong>Gostaria de colaborar?</strong><br>
+  <a href="mailto:leharaujo.mgmt@gmail.com" 
+     style="
+       display: inline-block;
+       margin-top: 10px;
+       background: var(--rosa-escuro);
+       color: white;
+       padding: 10px 20px;
+       border-radius: 30px;
+       font-weight: 700;
+       text-decoration: none;
+       transition: all 0.3s ease;
+       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+     "
+     onmouseover="this.style.background='var(--azul-claro)'; this.style.color='var(--rosa-escuro)'"
+     onmouseout="this.style.background='var(--rosa-escuro)'; this.style.color='white'">
+     ✨ Envie um e-mail agora! ✨
+  </a>
+</p>
+</section>
+
+<footer>
+    &copy; 2025 Lelehbass | Todos os direitos reservados
+</footer>
+
+<button id="backToTop">&#8679;</button>
+
+<script>
+// Fade-in nas seções
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.2});
+sections.forEach(section => observer.observe(section));
+
+// Botão voltar ao topo
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 400){
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+
+</body>
+</html>
